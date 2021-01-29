@@ -75,47 +75,6 @@ html, body {
     z-index: 3;
 }
 
-<<<<<<< Updated upstream
-=======
-.pickaxeUpgrades {
-    position: relative;
-    top: 10px;
-    left: 10px;
-    width: 330px;
-    height: 70px;
-    background-color: green;
-
-    display: flex;
-    flex-direction: ltr;
-    justify-content: left;
-}
-
-.upgrades {
-    position: relative;
-    top: 15px;
-    left: 10px;
-    width: 330px;
-    height: 700px;
-    /*background-color: blue;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: left;*/
-}
-
-.pickaxeItem {
-    margin: 3px;
-    width: 60px;
-    height: 60px;
-    background-color: yellow;
-}
-
-.pickaxeItem img {
-    width: 60px;
-    height: 60px;
-}
-
->>>>>>> Stashed changes
 #footerBody {
     position: relative;
     margin-left: auto;
