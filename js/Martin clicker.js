@@ -86,7 +86,7 @@ diamondOre.addEventListener("click", function()
     sessionStorage.setItem("diamonds", diamonds);
 
     // Play sound
-    var audio = document.getElementById("audio");
+    var audio = document.getElementById("audio-hakk");
     audio.play();
 
 });
