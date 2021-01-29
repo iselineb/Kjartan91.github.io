@@ -22,6 +22,8 @@ if (!sessionStorage.getItem("pickaxeRotation"))
 if (!sessionStorage.getItem("isMuted"))
     sessionStorage.setItem("isMuted", false);
 
+// Add upgrades
+addUpgrades();
 
 // Main shit
 setInterval(function()
@@ -88,7 +90,7 @@ mainBody.addEventListener("mousemove", function(Event)
     pickaxe.style.top = `${y-30}px`;
 });
 
-
+new Upgrade(0, "Elvis", 15);
 // Click diamond ore
 const diamondOre = document.querySelector(".diamondOre");
 diamondOre.addEventListener("click", function(Event)
