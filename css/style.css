@@ -61,6 +61,8 @@ html, body {
     position: fixed;
     background-color: green;
     z-index: 4;
+    transform-origin: 160px 160px;
+    transform: rotate(40deg);
 }
 
 .upgradePanel {

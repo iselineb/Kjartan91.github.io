@@ -16,6 +16,9 @@ if (!sessionStorage.getItem("martinDeg"))
 if (!sessionStorage.getItem("martinDirection"))
     sessionStorage.setItem("martinDirection", "Right");
 
+    if (!sessionStorage.getItem("pickaxeRotation"))
+    sessionStorage.setItem("pickaxeRotation", "0");
+
 // Main shit
 setInterval(function()
 {
@@ -58,6 +61,15 @@ setInterval(function()
     sessionStorage.setItem("martinDeg", martinDegrees);
     sessionStorage.setItem("martinDirection", martinDirection);
 
+    // Animate pickaxe on mining
+    const pickaxe = document.querySelector(".pickaxe");
+    let pickaxeRotation = sessionStorage.getItem("pickaxeRotation");
+    pickaxe.style.transform = `rotate(${pickaxeRotation}deg)`;
+
+    if (pickaxeRotation > 0)
+        pickaxeRotation -= 10;
+
+    sessionStorage.setItem("pickaxeRotation", pickaxeRotation);
 }, 40);
 
 // Make pickaxe follow 
@@ -88,6 +100,9 @@ diamondOre.addEventListener("click", function()
     // Play sound
     var audio = document.getElementById("audio-hakk");
     audio.play();
+
+    // Set pickaxeRotation
+    sessionStorage.setItem("pickaxeRotation", "40");
 
 });
 
