@@ -22,6 +22,8 @@ if (!sessionStorage.getItem("pickaxeRotation"))
 if (!sessionStorage.getItem("isMuted"))
     sessionStorage.setItem("isMuted", false);
 
+// Add upgrades
+addUpgrades();
 
 // Main shit
 setInterval(function()
@@ -149,10 +151,8 @@ getSaveBtn.addEventListener("click", function()
     //diamondCounter.innerHTML = localStorage.getItem("diamonds")
 });
 
-// Teste pickaxe-upgrade
 var steinhakke = new PickaxeUpgrade("Steinhakke", 100, "Et lite rykk opp.", "img/Pickaxe_stone.png")
 var jernhakke = new PickaxeUpgrade("Jernhakke", 100, "Et lite rykk opp.", "img/Pickaxe_iron.png")
 var gullhakke = new PickaxeUpgrade("Gullhakke", 100, "Et lite rykk opp.", "img/Pickaxe_golden.png")
 var diamanthakke = new PickaxeUpgrade("Diamanthakke", 100, "Et lite rykk opp.", "img/Pickaxe_diamond.png")
 var netheritehakke = new PickaxeUpgrade("Netheritehakke", 100, "Et lite rykk opp.", "img/Pickaxe_netherite.png")
-
