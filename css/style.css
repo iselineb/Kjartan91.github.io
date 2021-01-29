@@ -104,6 +104,8 @@ html, body {
     margin-right: auto;
     width: 1600px;
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #soundOpt {
@@ -112,4 +114,16 @@ html, body {
 
 #soundOpt:hover {
     cursor: pointer;
+}
+
+.localButtons button {
+    border: none;
+    text-decoration: none;
+    background-color: #e7e7e7;
+    cursor: pointer;
+    padding: 5px 32px;
+}
+#saveBtn {
+    color: white;
+    background-color: #555555;
 }

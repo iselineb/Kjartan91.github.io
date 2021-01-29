@@ -113,20 +113,37 @@ diamondOre.addEventListener("click", function()
 });
 
 // Sound on/off
-const soundButton = document.getElementById("soundOpt");
-soundButton.addEventListener("click", function()
+const soundBtn = document.getElementById("soundOpt");
+soundBtn.addEventListener("click", function()
 {
     let isMuted = sessionStorage.getItem("isMuted");
     // Hvis muted før man trykker på lyd-knapp
     if(isMuted == "true") {
-        soundButton.innerHTML = "🔈";
+        soundBtn.innerHTML = "🔈";
         sessionStorage.setItem("isMuted", false);
     }
     // Hvis lyd er på før man trykker på lyd-knapp
     else {
-        soundButton.innerHTML = "🔇";
+        soundBtn.innerHTML = "🔇";
         sessionStorage.setItem("isMuted", true);
     }
 });
 
+// Save diamonds to local storage 
+const saveBtn = document.getElementById("saveBtn");
+saveBtn.addEventListener("click", function()
+{
+    let diamondCounter = document.querySelector(".diamondCounter p");
+    localStorage.setItem("diamonds", sessionStorage.getItem("diamonds"));
+});
+
+// Get diamonds from local storage 
+const getSaveBtn = document.getElementById("getSaveBtn");
+getSaveBtn.addEventListener("click", function()
+{
+    let diamondCounter = document.querySelector(".diamondCounter p");
+    let diamonds = localStorage.getItem("diamonds")
+    sessionStorage.setItem("diamonds", diamonds)
+    //diamondCounter.innerHTML = localStorage.getItem("diamonds")
+});
 
