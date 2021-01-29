@@ -16,8 +16,12 @@ if (!sessionStorage.getItem("martinDeg"))
 if (!sessionStorage.getItem("martinDirection"))
     sessionStorage.setItem("martinDirection", "Right");
 
-    if (!sessionStorage.getItem("pickaxeRotation"))
+if (!sessionStorage.getItem("pickaxeRotation"))
     sessionStorage.setItem("pickaxeRotation", "0");
+
+if (!sessionStorage.getItem("isMuted"))
+    sessionStorage.setItem("isMuted", false);
+
 
 // Main shit
 setInterval(function()
@@ -72,9 +76,9 @@ setInterval(function()
     sessionStorage.setItem("pickaxeRotation", pickaxeRotation);
 }, 40);
 
-// Make pickaxe follow 
-const cursor = document.querySelector(".pickaxe");
-document.addEventListener("mousemove", function(Event)
+// Make pickaxe follow cursor
+const mainBody = document.getElementById("mainBody");
+mainBody.addEventListener("mousemove", function(Event)
 {
     const pickaxe = document.querySelector(".pickaxe");
     let x = Event.pageX;
@@ -97,13 +101,32 @@ diamondOre.addEventListener("click", function()
     diamonds++;
     sessionStorage.setItem("diamonds", diamonds);
 
-    // Play sound
+    // Play sound if not muted
     var audio = document.getElementById("audio-hakk");
-    audio.play();
+    let isMuted = sessionStorage.getItem("isMuted");
+    if(isMuted == "false") 
+        audio.play();
 
     // Set pickaxeRotation
     sessionStorage.setItem("pickaxeRotation", "40");
 
+});
+
+// Sound on/off
+const soundButton = document.getElementById("soundOpt");
+soundButton.addEventListener("click", function()
+{
+    let isMuted = sessionStorage.getItem("isMuted");
+    // Hvis muted før man trykker på lyd-knapp
+    if(isMuted == "true") {
+        soundButton.innerHTML = "🔈";
+        sessionStorage.setItem("isMuted", false);
+    }
+    // Hvis lyd er på før man trykker på lyd-knapp
+    else {
+        soundButton.innerHTML = "🔇";
+        sessionStorage.setItem("isMuted", true);
+    }
 });
 
 
