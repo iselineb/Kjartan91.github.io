@@ -110,6 +110,8 @@ diamondOre.addEventListener("click", function()
     // Set pickaxeRotation
     sessionStorage.setItem("pickaxeRotation", "40");
 
+    // Create diamond particles
+    createDiamondParticles();
 });
 
 // Sound on/off
