@@ -71,7 +71,7 @@ html, body {
     right: 10px;
     width: 350px;
     height: 800px;
-    /*background-color: red;*/
+    background-color: red;
     z-index: 3;
 }
 

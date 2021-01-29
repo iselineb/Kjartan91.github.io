@@ -90,7 +90,7 @@ mainBody.addEventListener("mousemove", function(Event)
     pickaxe.style.top = `${y-30}px`;
 });
 
-new Upgrade(0, "Elvis", 15);
+
 // Click diamond ore
 const diamondOre = document.querySelector(".diamondOre");
 diamondOre.addEventListener("click", function(Event)
@@ -151,10 +151,8 @@ getSaveBtn.addEventListener("click", function()
     //diamondCounter.innerHTML = localStorage.getItem("diamonds")
 });
 
-// Teste pickaxe-upgrade
 var steinhakke = new PickaxeUpgrade("Steinhakke", 100, "Et lite rykk opp.", "img/Pickaxe_stone.png")
 var jernhakke = new PickaxeUpgrade("Jernhakke", 100, "Et lite rykk opp.", "img/Pickaxe_iron.png")
 var gullhakke = new PickaxeUpgrade("Gullhakke", 100, "Et lite rykk opp.", "img/Pickaxe_golden.png")
 var diamanthakke = new PickaxeUpgrade("Diamanthakke", 100, "Et lite rykk opp.", "img/Pickaxe_diamond.png")
 var netheritehakke = new PickaxeUpgrade("Netheritehakke", 100, "Et lite rykk opp.", "img/Pickaxe_netherite.png")
-

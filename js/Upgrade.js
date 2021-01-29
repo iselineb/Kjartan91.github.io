@@ -63,7 +63,7 @@ class Upgrade {
         buildingDiv.appendChild(this.price);
     
         // Event listener
-        alert(this.curPrice);
+        //alert(this.curPrice);
         buildingDiv.addEventListener("click", function()
         {
             alert(this.curPrice);
@@ -75,7 +75,8 @@ class Upgrade {
 function addUpgrades()
 {
 
-    new Upgrade(0, "Elvis", 15);
+    
+    new Upgrade(1, "Elvis", 15);
 
     
     //new Upgrade(1, "Arne", 100);
