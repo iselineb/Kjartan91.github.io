@@ -66,36 +66,13 @@ html, body {
 
 .upgradePanel {
     position: absolute;
+    cursor: auto;
+    margin-top: 10px;
     right: 10px;
     width: 350px;
     height: 800px;
     background-color: red;
     z-index: 3;
-}
-
-.pickaxeUpgrades {
-    position: relative;
-    top: 10px;
-    left: 10px;
-    width: 330px;
-    height: 70px;
-    background-color: green;
-
-    display: flex;
-    flex-direction: ltr;
-    justify-content: left;
-}
-
-.pickaxeItem {
-    margin: 3px;
-    width: 60px;
-    height: 60px;
-    background-color: yellow;
-}
-
-.pickaxeItem img {
-    width: 60px;
-    height: 60px;
 }
 
 #footerBody {
