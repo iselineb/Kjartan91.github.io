@@ -91,7 +91,7 @@ mainBody.addEventListener("mousemove", function(Event)
 
 // Click diamond ore
 const diamondOre = document.querySelector(".diamondOre");
-diamondOre.addEventListener("click", function()
+diamondOre.addEventListener("click", function(Event)
 {
     // Set ore scale
     sessionStorage.setItem("diamondOreScale", "0.2");
@@ -110,6 +110,8 @@ diamondOre.addEventListener("click", function()
     // Set pickaxeRotation
     sessionStorage.setItem("pickaxeRotation", "40");
 
+    // Create diamond particles
+    createDiamondParticles(Event.pageX, Event.pageY, 1);
 });
 
 // Sound on/off
