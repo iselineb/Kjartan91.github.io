@@ -96,3 +96,10 @@ html, body {
     width: 60px;
     height: 60px;
 }
+
+#footerBody {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1600px;
+}
