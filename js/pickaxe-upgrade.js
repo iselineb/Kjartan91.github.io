@@ -8,7 +8,7 @@ class PickaxeUpgrade {
 		this.tooltip = null;
 
 		pickaxeUpgrade.addEventListener("mouseover", function(Event) {
-			this.tooltip = new Tooltip(name, description, basePrice, Event.pageX, Event.pageY);		
+			this.tooltip = new Tooltip(name, description, basePrice, Event.pageX, Event.pageY);	
 		});
 
 		pickaxeUpgrade.addEventListener("mouseout", function(Event) {

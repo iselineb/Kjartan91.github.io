@@ -4,7 +4,9 @@ class Upgrade {
     constructor(buildingNum, buildingName, buildingPrice) {
 
         this.name = buildingName;
-        this.curPrice = buildingPrice;
+        //this.curPrice = buildingPrice;
+        let curPrice = buildingPrice;
+        let curPriceElement;
 
         // Main div
         let buildingDiv = document.createElement("div");
@@ -51,23 +53,29 @@ class Upgrade {
         buildingDiv.appendChild(diamondImage);
 
         // Price
-        this.price = document.createElement("p");
-        this.price.innerHTML = this.curPrice;
-        this.price.style.position = "absolute";
-        this.price.style.left = "110px";
-        this.price.style.top = "56px";
-        this.price.style.margin = "0px";
-        this.price.style.fontSize = "15px";
-        this.price.style.color = "white";
-        this.price.style.fontFamily = "Comic Sans MS";
-        buildingDiv.appendChild(this.price);
+        curPriceElement = document.createElement("p");
+        curPriceElement.innerHTML = curPrice;
+        curPriceElement.style.position = "absolute";
+        curPriceElement.style.left = "110px";
+        curPriceElement.style.top = "56px";
+        curPriceElement.style.margin = "0px";
+        curPriceElement.style.fontSize = "15px";
+        curPriceElement.style.color = "white";
+        curPriceElement.style.fontFamily = "Comic Sans MS";
+        buildingDiv.appendChild(curPriceElement);
+
     
+
         // Event listener
         //alert(this.curPrice);
-        buildingDiv.addEventListener("click", function()
+        buildingDiv.addEventListener("click", function(Event)
         {
-            alert(this.curPrice);
-
+            if (buy(curPrice))
+            {
+                curPrice += 15;
+                curPriceElement.innerHTML = curPrice;
+            }
+            
         });
     }
 }
