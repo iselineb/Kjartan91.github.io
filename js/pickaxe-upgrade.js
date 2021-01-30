@@ -12,7 +12,11 @@ class PickaxeUpgrade {
 		});
 
 		pickaxeUpgrade.addEventListener("click", function(Event) {
-			this.buyUpgrade();
+			if(buy(basePrice)) {
+				pickaxeUpgrade.style.opacity = 0.5;
+				changePickaxe(imgPath); 
+				//TODO: Stoppe folk i å kjøpeden samme to ganger
+			}
 		});
 
 		pickaxeUpgrade.addEventListener("mouseout", function(Event) {
@@ -20,9 +24,5 @@ class PickaxeUpgrade {
 		});
 
 		container.appendChild(pickaxeUpgrade);
-	}
-
-	buyUpgrade() {
-		pickaxeUpgrade.style.opacity = 0.5;
 	}
 }
