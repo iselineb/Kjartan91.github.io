@@ -3,10 +3,19 @@ class Upgrade {
 
     constructor(buildingNum, buildingName, buildingPrice) {
 
-        this.name = buildingName;
+ 
+
+        let unlocked = false;
         //this.curPrice = buildingPrice;
+
+        let name = buildingName;
+        let nameElement;
+
         let curPrice = buildingPrice;
         let curPriceElement;
+
+        let count = 0;
+        let countElement;
 
         // Main div
         let buildingDiv = document.createElement("div");
@@ -32,17 +41,17 @@ class Upgrade {
 
         
         // Name
-        let name = document.createElement("p");
-        name.innerHTML = this.name;
-        name.style.position = "absolute";
-        name.style.left = "90px";
-        name.style.top = "-5px";
-        name.style.width = "150px";
-        name.style.margin = "0px";
-        name.style.fontSize = "50px";
-        name.style.color = "white";
-        name.style.fontFamily = "Comic Sans MS";
-        buildingDiv.appendChild(name);
+        nameElement = document.createElement("p");
+        nameElement.innerHTML = "?";
+        nameElement.style.position = "absolute";
+        nameElement.style.left = "90px";
+        nameElement.style.top = "-5px";
+        nameElement.style.width = "150px";
+        nameElement.style.margin = "0px";
+        nameElement.style.fontSize = "50px";
+        nameElement.style.color = "white";
+        nameElement.style.fontFamily = "Comic Sans MS";
+        buildingDiv.appendChild(nameElement);
 
         // Diamond icon
         let diamondImage = new Image(20, 20);
@@ -64,7 +73,35 @@ class Upgrade {
         curPriceElement.style.fontFamily = "Comic Sans MS";
         buildingDiv.appendChild(curPriceElement);
 
-    
+        // Count
+        countElement = document.createElement("p");
+        countElement.innerHTML = count;
+        countElement.style.position = "absolute";
+        countElement.style.right = "40px";
+        countElement.style.top = "-10px";
+        countElement.style.margin = "0px";
+        countElement.style.fontSize = "65px";
+        countElement.style.color = "white";
+        countElement.style.fontFamily = "Comic Sans MS";
+        buildingDiv.appendChild(countElement);
+
+        setInterval(function(){
+            // Unlock building
+            if (!unlocked)
+            {
+               
+                if (curDiamonds() >= curPrice)
+                {
+                   
+                    nameElement.innerHTML = name;
+                    unlocked = true;
+
+
+                }
+            }
+
+            increaseDiamonds(count);
+        }, 1000);
 
         // Event listener
         //alert(this.curPrice);
@@ -74,6 +111,9 @@ class Upgrade {
             {
                 curPrice += 15;
                 curPriceElement.innerHTML = curPrice;
+
+                count++;
+                countElement.innerHTML = count;
             }
             
         });
