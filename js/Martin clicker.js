@@ -86,8 +86,8 @@ mainBody.addEventListener("mousemove", function(Event)
     let x = Event.pageX;
     let y = Event.pageY;
 
-    pickaxe.style.left = `${x-20}px`;
-    pickaxe.style.top = `${y-30}px`;
+    pickaxe.style.left = `${x-15}px`;
+    pickaxe.style.top = `${y-25}px`;
 });
 
 

@@ -14,7 +14,8 @@ function buy(price)
 
 function changePickaxe(imgPath) {
     document.getElementById("img-pickaxe").src = imgPath;
-    
+}
+
 function increaseDiamonds(increaseBy)
 {
     let diamonds = +sessionStorage.getItem("diamonds");

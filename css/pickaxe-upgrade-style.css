@@ -25,6 +25,7 @@
 	background-color: #555;
 	z-index: 10;
 	opacity: 0.9;
+	pointer-events: none;
 }
 
 .tooltip  h3 {
