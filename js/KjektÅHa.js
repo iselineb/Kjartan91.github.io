@@ -1,5 +1,3 @@
-
-
 function buy(price)
 {
     let diamonds = sessionStorage.getItem("diamonds");
@@ -12,4 +10,8 @@ function buy(price)
     }
     else
         return false;
+}
+
+function changePickaxe(imgPath) {
+	document.getElementById("img-pickaxe").src = imgPath;
 }
