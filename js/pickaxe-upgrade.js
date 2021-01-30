@@ -11,10 +11,18 @@ class PickaxeUpgrade {
 			this.tooltip = new Tooltip(name, description, basePrice, Event.pageX, Event.pageY);		
 		});
 
+		pickaxeUpgrade.addEventListener("click", function(Event) {
+			this.buyUpgrade();
+		});
+
 		pickaxeUpgrade.addEventListener("mouseout", function(Event) {
-			this.tooltip.removeTooltip();		
+			this.tooltip.removeTooltip();
 		});
 
 		container.appendChild(pickaxeUpgrade);
+	}
+
+	buyUpgrade() {
+		pickaxeUpgrade.style.opacity = 0.5;
 	}
 }
